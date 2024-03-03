@@ -1,0 +1,44 @@
+sudo apt update
+sudo apt-get install screen
+sudo apt-get install git-all
+curl — proto ‘=https’ — tlsv1.3 https://sh.rustup.rs (https://sh.rustup.rs/) -sSf | sh
+source “$HOME/.cargo/env”
+rustup update stable
+rustup default stable
+curl — proto ‘=https’ — tlsv1.2 -sSf https://install.fuel.network/fuelup-init.sh | sh
+export PATH=”$HOME/.fuelup/bin:$PATH”
+source /root/.bashrc
+fuelup toolchain install beta-4
+fuelup default beta-4
+fuelup
+mkdir fuel-project
+cd fuel-project
+forc new counter-contract
+sudo apt install vim
+vim counter-contract/src/main.sw
+Press <i> key to switch vim to Insert mode. then
+Press <v> key to switch vim for Selection mode
+Now delete everything
+contract;
+
+abi MyContract {
+fn test_function() -> bool;
+}
+
+impl MyContract for Contract {
+fn test_function() -> bool {
+true
+}
+}
+Press <Esc> key to escape from Insert more
+Type <:w> and press <Enter> to save changes
+Type <:q> to close the document
+cd counter-contract
+forc build
+*WALLET IMPORT*
+forc-wallet import
+*WALLET CREATION*
+forc wallet account new
+forc deploy — testnet
+*PROVIDE PASSWORD*
+*CHECK WALLET HISTORY*
